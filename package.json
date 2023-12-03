@@ -1,7 +1,7 @@
 {
   "homepage": "https://finndejongdev.github.io/portfolio-2023/",
   "name": "rotating-portfolio",
-  "private": true,
+  "private": false,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
