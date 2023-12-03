@@ -1,5 +1,5 @@
 {
-  "homepage": "https://FinnDeJongDev.github.io",
+  "homepage": "https://finndejongdev.github.io/portfolio-2023/",
   "name": "rotating-portfolio",
   "private": true,
   "version": "0.0.0",
@@ -10,7 +10,7 @@
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "predeploy": "vite build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "eventemitter3": "^5.0.1",
