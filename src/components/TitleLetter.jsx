@@ -1,27 +1,49 @@
 /* eslint-disable react/prop-types */
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import Emitter from "../services/Emitter";
 
 
 export default function TitleLetter(props) {
-  const [isHovered, setHovered] = useState(false)
+  const [isHovered, setHovered] = useState(false);
+  const [isFlashlight, setFlashlight] = useState(false);
 
-  console.log(props)
+  const letterRef = useRef();
+
+  useEffect(() => {
+    Emitter.emit("SET_CURSOR", isFlashlight)
+  }, [isFlashlight]);
 
   return (
     <h1
+      ref={letterRef}
       onMouseEnter={() => {
         setHovered(true)
       }}
       onMouseLeave={() => {
         setHovered(false)
       }}
+      onClick={() => {
+        if (props.letter === 'i') {
+          setFlashlight(!isFlashlight)
+        }
+      }}
       style={{
-        color: isHovered ? 'orange' : 'white',
-        // animationName: isHovered ? 'jitter' : '',
-        // animationDuration: '250ms',
-        // animationIterationCount: 'infinite',
+        color: isHovered
+          ? props.letter === 'i'
+            ? '#ff2200' // Hover over 'i'
+            : '#ff8000' // General hover
+          : 'white', // No hover
         transition: 'transform 250ms',
-        transform: isHovered ? 'scale(1.1)' : null
+        transform: isHovered ? `scale(1.2)` : null,
+        animationName: props.letter === 'i'
+          ? isFlashlight
+            ? null
+            : 'bounce'
+          : null,
+        animationDelay: '3s',
+        animationDuration: '1000ms',
+        animationIterationCount: 'infinite',
+        animationTimingFunction: 'ease-in',
       }}
     >
       {props.letter}
