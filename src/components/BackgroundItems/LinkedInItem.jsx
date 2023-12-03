@@ -34,6 +34,7 @@ export default function LinkedInItem() {
           alignItems: 'center',
           flexDirection: 'column',
           textDecoration: 'none',
+          pointerEvents: flashlightmode ? 'auto' : 'none'
         }}
         onMouseEnter={() => {
           setIsHovering(true)
@@ -50,7 +51,8 @@ export default function LinkedInItem() {
         <h2
           style={{
             marginTop: 10,
-            color: isHovering ? '#ff8000' : 'white'
+            color: isHovering ? '#ff8000' : 'white',
+            userSelect: 'none',
           }}
         >
           Linked In

@@ -51,7 +51,8 @@ export default function GithubItem() {
         <h2
           style={{
             marginTop: 10,
-            color: isHovering ? '#ff8000' : 'white'
+            color: isHovering ? '#ff8000' : 'white',
+            userSelect: 'none',
           }}
         >
           Github
