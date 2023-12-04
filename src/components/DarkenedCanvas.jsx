@@ -8,7 +8,6 @@ export default function DarkenedCanvas() {
   const canvasRef = useRef()
 
   useEffect(() => {
-    console.log(canvasRef.current)
     let ctx = canvasRef.current.getContext('2d');
 
     // Set initial darkened canvas

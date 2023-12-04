@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import Emitter from '../../services/Emitter';
 import ArchiveSVG from '../../assets/icons/ArchiveSVG';
-import links from '../../config/links.config';
+import links from '../../config/aLinks.config';
 
 export default function LastProjectItem() {
   const [isHovering, setIsHovering] = useState(false)

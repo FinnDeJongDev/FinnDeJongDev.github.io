@@ -9,7 +9,7 @@ import defaultCursor from '../assets/cursor/dark-hover.png';
 import flashlightCursor from '../assets/cursor/flashlight.png';
 
 export default function Cursor() {
-  const [currentCursor, setCurrentCursor] = useState('');
+  const [flashlightMode, setFlashlightMode] = useState('');
   const canvasRef = useRef();
   const mousePos = useMousePosition()
 
@@ -27,25 +27,22 @@ export default function Cursor() {
     defaultCur.src = defaultCursor;
 
     // Draw cursor depending on version
-    switch (currentCursor) {
-      case 'flashlight':
-        ctx.drawImage(flashlightCur, mousePos.x - 26, mousePos.y - 35);
-        break;
-
-      default:
-        ctx.drawImage(defaultCur, mousePos.x - 17, mousePos.y - 17);
-        break;
+    if (flashlightMode) {
+      ctx.drawImage(flashlightCur, mousePos.x - 26, mousePos.y - 35);
+    } else {
+      ctx.drawImage(defaultCur, mousePos.x - 17, mousePos.y - 17);
     }
 
-  }, [currentCursor, mousePos])
+
+  }, [flashlightMode, mousePos])
 
   // Emit cursor type
   useEffect(() => {
     Emitter.on("SET_CURSOR", (data) => {
       if (data) {
-        setCurrentCursor('flashlight')
+        setFlashlightMode(true)
       } else {
-        setCurrentCursor('')
+        setFlashlightMode(false)
       }
     })
 
@@ -60,9 +57,6 @@ export default function Cursor() {
       ref={canvasRef}
       width={window.innerWidth}
       height={window.innerHeight}
-      onClick={() => {
-
-      }}
       style={{
         position: 'absolute',
         pointerEvents: 'none'
