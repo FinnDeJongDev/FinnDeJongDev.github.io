@@ -29,7 +29,10 @@ function App() {
               {/* Mobile links */}
               <Background />
               {/* Title */}
-              <MobileTitle />
+              <MobileTitle
+                title='Finn'
+                subTitle='de Jong'
+              />
             </>
           )
           : (

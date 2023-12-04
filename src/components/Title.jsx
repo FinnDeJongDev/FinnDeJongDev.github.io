@@ -20,7 +20,10 @@ export default function Title({ title }) {
       {title.split('').map((c, i) => {
         if (c === ' ') return <h1 key={i}>&nbsp;</h1>
         return (
-          <TitleLetter key={i} letter={c} random={Math.random().toFixed(2)} />
+          <TitleLetter
+            key={i}
+            letter={c}
+          />
         )
       })}
     </div>

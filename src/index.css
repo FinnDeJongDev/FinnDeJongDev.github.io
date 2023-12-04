@@ -31,6 +31,20 @@ html {
   }
 }
 
+@keyframes top-wave {
+  50% {
+    padding-top: 0;
+    padding-bottom: 10px;
+  }
+}
+
+@keyframes bottom-wave {
+  50% {
+    padding-bottom: 0;
+    padding-top: 10px;
+  }
+}
+
 /* Cursor media query */
 @media (max-width: 1280px) {
   * {

@@ -1,6 +1,6 @@
+import MobileTitleLetter from "./MobileTitleLetter"
 
-
-export default function MobileTitle() {
+export default function MobileTitle({ title, subTitle }) {
   return (
     <div
       style={{
@@ -9,24 +9,50 @@ export default function MobileTitle() {
         alignItems: 'center',
         color: 'white',
         position: 'absolute',
+        height: 220,
       }}
     >
-      <h1
+      <div
         style={{
-          margin: 0,
-          fontSize: '4.5rem'
+          display: 'flex',
+          flexDirection: 'row'
         }}
       >
-        Finn
-      </h1>
-      <h2
+        {
+          title.split('').map((c, i) => {
+            return (
+              <MobileTitleLetter
+                title
+                fontSize='4.5rem'
+                key={i}
+                letter={c}
+                itteration={i}
+              />
+            )
+          })
+        }
+      </div>
+      <div
         style={{
-          margin: 0,
-          fontSize: '3.5rem'
+          display: 'flex',
+          flexDirection: 'row'
         }}
       >
-        de Jong
-      </h2>
+        {
+          subTitle.split('').map((c, i) => {
+            if (c === ' ') return <h1 key={i}>&nbsp;</h1>
+            return (
+              <MobileTitleLetter
+                subTitle
+                fontSize='3.5rem'
+                key={i}
+                letter={c}
+                itteration={i}
+              />
+            )
+          })
+        }
+      </div>
     </div>
   )
 }
