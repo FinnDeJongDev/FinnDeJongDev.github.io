@@ -12,7 +12,8 @@ export default function MobileTitleLetter(props) {
         animationName: props.title ? 'top-wave' : 'bottom-wave',
         animationIterationCount: 'infinite',
         animationDelay: `${props.itteration * 100}ms`,
-        animationDuration: '1s'
+        animationDuration: '0.75s',
+        animationTimingFunction: 'ease-in-out'
       }}
     >
       {props.letter}
