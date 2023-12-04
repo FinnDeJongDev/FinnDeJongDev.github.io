@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import Emitter from '../../services/Emitter';
 import EyeSVG from '../../assets/icons/EyeSVG';
-import links from '../../config/aLinks.config';
+import links from '../../config/Links.config';
 
 export default function BestProjectItem() {
   const [isHovering, setIsHovering] = useState(false)

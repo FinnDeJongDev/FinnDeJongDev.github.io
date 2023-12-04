@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import Emitter from '../../services/Emitter';
 import GithubSVG from '../../assets/icons/GithubSVG';
-import links from '../../config/aLinks.config';
+import links from '../../config/Links.config';
 
 export default function GithubItem() {
   const [isHovering, setIsHovering] = useState(false)

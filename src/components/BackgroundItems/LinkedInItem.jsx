@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import Emitter from '../../services/Emitter';
 import LinkedInSVG from '../../assets/icons/LinkedInSVG';
-import links from '../../config/aLinks.config';
+import links from '../../config/Links.config';
 
 export default function LinkedInItem() {
   const [isHovering, setIsHovering] = useState(false)
