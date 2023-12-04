@@ -20,12 +20,7 @@ html {
   background-color: black;
 }
 
-.scale-svg {
-  scale: 2;
-}
-
 /* Animations */
-
 @keyframes bounce {
   33% {
     margin-top: 0;
@@ -33,5 +28,12 @@ html {
 
   66% {
     margin-top: 20px;
+  }
+}
+
+/* Cursor media query */
+@media (max-width: 1280px) {
+  * {
+    cursor: auto;
   }
 }

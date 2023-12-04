@@ -3,14 +3,14 @@ import Cursor from './components/Cursor';
 import Background from './components/Background';
 import DarkenedCanvas from './components/DarkenedCanvas';
 import BackgroundSupportText from './components/BackgroundItems/BackgroundSupportText';
+
+import MobileTitle from './components/MobileTitle';
+
 import Breakpoints from './config/Breakpoints.config';
 import useWindowSize from './hooks/useWindowSize';
 
-
-
 function App() {
   const size = useWindowSize();
-
 
   return (
     <div
@@ -24,17 +24,24 @@ function App() {
     >
       {
         size.width < Breakpoints.desktop.width
-          ? (null)
+          ? (
+            <>
+              {/* Mobile links */}
+              <Background />
+              {/* Title */}
+              <MobileTitle />
+            </>
+          )
           : (
             <>
               {/* Links */}
-              < Background />
+              <Background />
               {/* Info text  */}
-              < BackgroundSupportText />
+              <BackgroundSupportText />
               {/* Scratch canvas */}
-              < DarkenedCanvas />
+              <DarkenedCanvas />
               {/* Title */}
-              < Title title="Finn de Jong" />
+              <Title title="Finn de Jong" />
               {/* Cursor */}
               <Cursor />
             </>

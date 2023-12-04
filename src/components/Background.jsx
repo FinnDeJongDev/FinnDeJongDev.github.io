@@ -12,6 +12,7 @@ export default function Background() {
         color: 'white',
         display: 'grid',
         gridTemplate: '"a b" 1fr "c d" 1fr',
+        gridTemplateColumns: '1fr 1fr',
         gap: '25%'
       }}
     >
