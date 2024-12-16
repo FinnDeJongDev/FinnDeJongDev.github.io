@@ -1,0 +1,60 @@
+.container {
+  height: 100vh;
+  overflow: hidden;
+
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.container::-webkit-scrollbar {
+  display: none;
+}
+
+.title-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+}
+
+.title, .subtitle {
+  margin: 0;
+}
+
+.title {
+  font-size: 17.5vw;
+}
+
+.subtitle {
+  font-size: 2vw;
+}
+
+.scroll-wheel-container {
+  position: absolute;
+  height: 90vh;
+  width: 100vw;
+  top: 0;
+  display: flex;
+  align-items: end;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.scroll-wheel {
+  display: block;
+  opacity: 0;
+  width: 20px;
+  height: 50px;
+  background-color: white;
+  border-radius: 10px;
+}
+
+.scroll-dot {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  bottom: 35px;
+  border-radius: 10px;
+  background-color: var(--background-dark);
+  opacity: 0;
+}
