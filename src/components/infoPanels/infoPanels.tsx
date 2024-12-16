@@ -4,7 +4,7 @@ import profilePicture from '../../assets/face.jpg';
 import dutchFlag from '../../assets/Flag_of_the_Netherlands.svg';
 import { SkaterLoop } from '../Skater/SkaterLoop';
 import './infoPanels.css';
-import { useRef, useState } from 'react';
+import { useRef } from 'react';
 import { Draggable } from 'gsap/Draggable';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
